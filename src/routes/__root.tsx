@@ -77,14 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Tu Gemelo Digital — Oferta exclusiva" },
+      {
+        name: "description",
+        content:
+          "Crea tu Gemelo Digital: un avatar de IA con tu imagen y tu voz para producir videos profesionales en minutos.",
+      },
+      { property: "og:title", content: "Tu Gemelo Digital — Oferta exclusiva" },
+      {
+        property: "og:description",
+        content: "Tu imagen. Tu voz. Tu presencia creando contenido a escala.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
