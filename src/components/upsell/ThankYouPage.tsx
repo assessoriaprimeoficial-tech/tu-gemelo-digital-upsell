@@ -2,13 +2,25 @@ import { CheckCircle } from "lucide-react";
 
 export function ThankYouPage() {
   return (
-    <main className="min-h-screen bg-upsell-bg text-upsell-text">
+    <main className="flex min-h-screen flex-col bg-upsell-bg text-upsell-text">
       {/* Decorative top glow */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-64 overflow-hidden">
         <div className="absolute -top-32 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-upsell-gold/20 blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-5 py-10 sm:px-6 sm:py-14">
+      {/* Brand signature */}
+      <div className="relative z-10 flex justify-center pt-8 pb-2 sm:pt-10">
+        <span
+          className="text-center text-[10px] font-medium tracking-[0.3em] text-white/90 uppercase sm:text-xs"
+          aria-label="We Digital Mindset"
+        >
+          WE{" "}
+          <span className="text-upsell-gold">Digital</span>{" "}
+          Mindset
+        </span>
+      </div>
+
+      <div className="relative z-10 mx-auto flex w-full max-w-xl flex-1 flex-col items-center justify-center px-5 py-8 sm:px-6 sm:py-10">
         {/* Top label */}
         <div className="mb-8 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-4 py-2 text-center text-xs font-semibold tracking-wide text-upsell-gold uppercase sm:text-sm">
@@ -46,6 +58,18 @@ export function ThankYouPage() {
           Este es el comienzo de una nueva etapa. Disfruta cada recurso y conviértelo en acción.
         </p>
       </div>
+
+      {/* Footer */}
+      <footer className="relative z-10 w-full px-5 py-8 text-center sm:px-6">
+        <div className="mx-auto max-w-xl space-y-2">
+          <p className="text-[11px] leading-relaxed text-upsell-text-muted sm:text-xs">
+            © 2026 We Digital Mindset. Todos los derechos reservados.
+          </p>
+          <p className="text-[11px] leading-relaxed text-upsell-text-muted/80 sm:text-xs">
+            Compra procesada de forma segura por Hotmart.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
