@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UpsellTuGemeloDigitalRouteImport } from './routes/upsell.tu-gemelo-digital'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UpsellTuGemeloDigitalRoute = UpsellTuGemeloDigitalRouteImport.update({
+  id: '/upsell/tu-gemelo-digital',
+  path: '/upsell/tu-gemelo-digital',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/upsell/tu-gemelo-digital': typeof UpsellTuGemeloDigitalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/upsell/tu-gemelo-digital': typeof UpsellTuGemeloDigitalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/upsell/tu-gemelo-digital': typeof UpsellTuGemeloDigitalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/upsell/tu-gemelo-digital'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/upsell/tu-gemelo-digital'
+  id: '__root__' | '/' | '/upsell/tu-gemelo-digital'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  UpsellTuGemeloDigitalRoute: typeof UpsellTuGemeloDigitalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/upsell/tu-gemelo-digital': {
+      id: '/upsell/tu-gemelo-digital'
+      path: '/upsell/tu-gemelo-digital'
+      fullPath: '/upsell/tu-gemelo-digital'
+      preLoaderRoute: typeof UpsellTuGemeloDigitalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  UpsellTuGemeloDigitalRoute: UpsellTuGemeloDigitalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
