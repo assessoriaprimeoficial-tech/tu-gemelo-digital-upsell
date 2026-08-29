@@ -14,8 +14,8 @@ function HotmartSalesFunnel() {
       if (cancelled) return;
       const w = window as unknown as { checkoutElements?: { init: (k: string) => { mount: (s: string) => void } } };
       const el = document.getElementById(HOTMART_TARGET_ID);
-      if (!w.checkoutElements || !el || el.dataset.mounted === "true") return;
-      el.dataset.mounted = "true";
+      if (!w.checkoutElements || !el || el.dataset["mounted"] === "true") return;
+      el.dataset["mounted"] = "true";
       w.checkoutElements.init("salesFunnel").mount(`#${HOTMART_TARGET_ID}`);
     };
 
