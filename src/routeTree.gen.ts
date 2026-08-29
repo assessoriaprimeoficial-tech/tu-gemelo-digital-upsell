@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GraciasRouteImport } from './routes/gracias'
 import { Route as UpsellTuGemeloDigitalRouteImport } from './routes/upsell.tu-gemelo-digital'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GraciasRoute = GraciasRouteImport.update({
+  id: '/gracias',
+  path: '/gracias',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UpsellTuGemeloDigitalRoute = UpsellTuGemeloDigitalRouteImport.update({
@@ -25,27 +31,31 @@ const UpsellTuGemeloDigitalRoute = UpsellTuGemeloDigitalRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gracias': typeof GraciasRoute
   '/upsell/tu-gemelo-digital': typeof UpsellTuGemeloDigitalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gracias': typeof GraciasRoute
   '/upsell/tu-gemelo-digital': typeof UpsellTuGemeloDigitalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gracias': typeof GraciasRoute
   '/upsell/tu-gemelo-digital': typeof UpsellTuGemeloDigitalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/upsell/tu-gemelo-digital'
+  fullPaths: '/' | '/gracias' | '/upsell/tu-gemelo-digital'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/upsell/tu-gemelo-digital'
-  id: '__root__' | '/' | '/upsell/tu-gemelo-digital'
+  to: '/' | '/gracias' | '/upsell/tu-gemelo-digital'
+  id: '__root__' | '/' | '/gracias' | '/upsell/tu-gemelo-digital'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GraciasRoute: typeof GraciasRoute
   UpsellTuGemeloDigitalRoute: typeof UpsellTuGemeloDigitalRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gracias': {
+      id: '/gracias'
+      path: '/gracias'
+      fullPath: '/gracias'
+      preLoaderRoute: typeof GraciasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/upsell/tu-gemelo-digital': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GraciasRoute: GraciasRoute,
   UpsellTuGemeloDigitalRoute: UpsellTuGemeloDigitalRoute,
 }
 export const routeTree = rootRouteImport
