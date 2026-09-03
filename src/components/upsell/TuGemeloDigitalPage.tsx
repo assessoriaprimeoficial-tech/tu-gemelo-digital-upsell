@@ -20,6 +20,16 @@ import {
 
 import coverAsset from "@/assets/tu-gemelo-digital-cover.webp.asset.json";
 import tuMenteEnGPTCover from "@/assets/tu-mente-en-gpt-cover.png.asset.json";
+import tuSegundoCerebroCover from "@/assets/tu-segundo-cerebro-cover.png.asset.json";
+import tuGemeloDigitalCover from "@/assets/tu-gemelo-digital-cover.png.asset.json";
+import elEspejoDigitalCover from "@/assets/el-espejo-digital-cover.png.asset.json";
+
+const produtoCovers = [
+  tuMenteEnGPTCover,
+  tuSegundoCerebroCover,
+  tuGemeloDigitalCover,
+  elEspejoDigitalCover,
+];
 
 const HOTMART_SCRIPT_SRC = "https://checkout.hotmart.com/lib/hotmart-checkout-elements.js";
 const HOTMART_TARGET_ID = "hotmart-sales-funnel";
