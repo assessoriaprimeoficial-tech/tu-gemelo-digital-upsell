@@ -162,7 +162,8 @@
 .upsell-marquee-mask { mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent); }
 .upsell-marquee { animation: upsell-marquee 30s linear infinite; }
 .upsell-marquee-reverse { animation: upsell-marquee-reverse 38s linear infinite; }
-.upsell-marquee:hover, .upsell-marquee-reverse:hover { animation-play-state: paused; }
+.upsell-marquee, .upsell-marquee-reverse { animation-play-state: running !important; }
+.upsell-marquee-slow { animation: upsell-marquee 45s linear infinite; }
 
 @keyframes upsell-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes upsell-marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
