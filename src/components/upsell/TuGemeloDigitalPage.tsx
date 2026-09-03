@@ -1,24 +1,28 @@
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import {
   ArrowRight,
+  BadgeCheck,
   Brain,
   Check,
   ChevronDown,
   CircleCheck,
   Eye,
   Gauge,
+  ImageIcon,
   Layers3,
   Lightbulb,
   LockKeyhole,
   MessageSquareText,
+  Quote,
   ShieldCheck,
   Sparkles,
   Target,
   Video,
   WandSparkles,
+  X,
 } from "lucide-react";
 
-import coverAsset from "@/assets/tu-gemelo-digital-cover.webp.asset.json";
+
 import tuMenteEnGPTCover from "@/assets/tu-mente-en-gpt-cover.png.asset.json";
 import tuSegundoCerebroCover from "@/assets/tu-segundo-cerebro-cover.png.asset.json";
 import tuGemeloDigitalCover from "@/assets/tu-gemelo-digital-cover.png.asset.json";
