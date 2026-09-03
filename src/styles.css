@@ -173,5 +173,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .upsell-marquee, .upsell-marquee-reverse, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; }
+  .upsell-marquee, .upsell-marquee-reverse, .upsell-marquee-slow, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; }
 }
