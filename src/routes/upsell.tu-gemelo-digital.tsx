@@ -6,21 +6,21 @@ export const Route = createFileRoute("/upsell/tu-gemelo-digital")({
   head: () => ({
     meta: [
       {
-        title: "Tu Gemelo Digital — Oferta exclusiva",
+        title: "Método Mente Expandida — Oferta exclusiva",
       },
       {
         name: "description",
         content:
-          "Crea tu Gemelo Digital: un avatar de IA con tu imagen y tu voz para producir videos profesionales en minutos. Oferta exclusiva para compradores de Tu Mente en GPT.",
+          "Transforme a inteligência artificial em uma extensão da sua mente para conhecer você, pensar com você, multiplicar suas ideias e transformar conhecimento em ação.",
       },
       {
         property: "og:title",
-        content: "Tu Gemelo Digital — Oferta exclusiva",
+        content: "Método Mente Expandida — Oferta exclusiva",
       },
       {
         property: "og:description",
         content:
-          "Tu imagen. Tu voz. Tu presencia creando contenido a escala. Graba una vez, aparece siempre.",
+          "Uma inteligência digital construída ao seu redor: conheça, pense, multiplique e evolua com a IA.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
