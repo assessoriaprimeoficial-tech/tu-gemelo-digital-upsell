@@ -65,7 +65,6 @@ const resultados = [
 ];
 
 const recursos = ["Perfil Mestre", "Prompt Mestre", "10 Comandos de Alto Valor", "Sistema de Decisões", "Planos de Ação", "Análise de Riscos", "Avatar com IA", "Voz com IA", "Roteiros para Vídeo", "Superprompts de Reflexão", "Mapa de Pontos Fortes", "Perguntas de Evolução"];
-const jornada = ["MAPEAR", "TRANSFERIR", "AMPLIAR", "MULTIPLICAR", "EVOLUIR"];
 const perguntas = [
   ["Preciso saber programar?", "Não. O método foi pensado para ser aplicado sem programação e sem conhecimento técnico avançado de prompts."],
   ["Preciso ter experiência com inteligência artificial?", "Não. Você pode começar mesmo com pouco conhecimento e avançar seguindo o processo de cada recurso."],
