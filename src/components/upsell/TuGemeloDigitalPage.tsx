@@ -85,9 +85,12 @@ function CTA({ children = "QUERO EXPANDIR MINHA MENTE COM IA" }: { children?: Re
   return <a href="#oferta" className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-3 rounded-2xl px-6 py-5 text-center text-sm font-black tracking-wide text-white uppercase sm:text-base">{children}<ArrowRight className="h-5 w-5 shrink-0" /></a>;
 }
 
-function CardProduto({ pilar, indice }: { pilar: (typeof pilares)[number]; indice: number }) {
-  const Icon = pilar.icon;
-  return <article className="upsell-product-card relative min-h-[360px] w-[290px] shrink-0 overflow-hidden rounded-[28px] border border-white/10 p-6 sm:w-[340px]"><div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-upsell-blue/80 to-transparent" /><div className="mb-8 flex items-center justify-between"><span className="text-xs font-black tracking-[0.2em] text-upsell-blue">{pilar.step}</span><span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-bold tracking-[0.16em] text-white/70">{pilar.tag}</span></div>{indice === 2 ? <div className="mb-6 flex justify-center"><img src={coverAsset.url} alt="Capa Tu Gemelo Digital" className="h-36 rounded-lg object-cover shadow-2xl shadow-black/50" /></div> : <div className="mb-10 grid h-20 w-20 place-items-center rounded-3xl border border-upsell-blue/20 bg-upsell-blue/10 text-upsell-blue"><Icon className="h-9 w-9" /></div>}<h3 className="text-2xl font-black tracking-tight text-white">{pilar.name}</h3><p className="mt-3 text-sm leading-6 text-upsell-text-muted">{pilar.text}</p></article>;
+function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) {
+  return <div className="upsell-product-card w-[220px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 p-2 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} loading="lazy" className="h-auto w-full rounded-[18px] object-contain" /></div>;
+}
+
+function DepoimentoCard() {
+  return <div className="upsell-product-card flex h-[230px] w-[260px] shrink-0 flex-col items-center justify-center gap-3 rounded-[24px] border border-dashed border-white/15 p-6 text-center sm:h-[260px] sm:w-[320px]"><Quote className="h-7 w-7 text-upsell-gold" /><ImageIcon className="h-8 w-8 text-white/25" /><p className="text-xs font-bold tracking-[0.14em] text-white/35 uppercase">Espaço para depoimento</p></div>;
 }
 
 export function TuGemeloDigitalPage() {
