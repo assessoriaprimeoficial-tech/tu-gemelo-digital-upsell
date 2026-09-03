@@ -4,20 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -59,8 +45,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Upsell page tokens */
   --color-upsell-bg: var(--upsell-bg);
   --color-upsell-surface: var(--upsell-surface);
   --color-upsell-gold: var(--upsell-gold);
@@ -107,17 +91,15 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-
-  /* Upsell page palette */
-  --upsell-bg: oklch(0.12 0.02 260);
-  --upsell-surface: oklch(0.18 0.03 260);
-  --upsell-gold: oklch(0.72 0.14 85);
-  --upsell-gold-light: oklch(0.85 0.1 85);
-  --upsell-blue: oklch(0.65 0.22 245);
-  --upsell-blue-glow: oklch(0.75 0.18 245);
-  --upsell-text: oklch(0.97 0.005 260);
-  --upsell-text-muted: oklch(0.7 0.03 260);
-  --upsell-success: oklch(0.65 0.18 145);
+  --upsell-bg: oklch(0.105 0.025 262);
+  --upsell-surface: oklch(0.16 0.03 260);
+  --upsell-gold: oklch(0.78 0.15 85);
+  --upsell-gold-light: oklch(0.9 0.1 88);
+  --upsell-blue: oklch(0.68 0.22 246);
+  --upsell-blue-glow: oklch(0.8 0.17 250);
+  --upsell-text: oklch(0.98 0.004 260);
+  --upsell-text-muted: oklch(0.68 0.035 260);
+  --upsell-success: oklch(0.72 0.18 145);
   --upsell-success-foreground: oklch(0.99 0.005 145);
 }
 
@@ -141,59 +123,54 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--color-background); color: var(--color-foreground); }
 }
 
-/* Upsell page utilities */
-@utility upsell-gradient-gold {
-  background: linear-gradient(135deg, var(--upsell-gold) 0%, var(--upsell-gold-light) 100%);
+@utility upsell-gradient-gold { background: linear-gradient(135deg, var(--upsell-gold) 0%, var(--upsell-gold-light) 100%); }
+@utility upsell-gradient-blue { background: linear-gradient(135deg, var(--upsell-blue) 0%, var(--upsell-blue-glow) 100%); }
+@utility upsell-glow-gold { box-shadow: 0 0 40px -10px color-mix(in oklab, var(--upsell-gold) 35%, transparent); }
+@utility upsell-glow-blue { box-shadow: 0 0 50px -10px color-mix(in oklab, var(--upsell-blue) 40%, transparent); }
+@utility upsell-text-gradient-gold { background: linear-gradient(135deg, var(--upsell-gold) 0%, var(--upsell-gold-light) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility upsell-text-gradient-blue { background: linear-gradient(135deg, var(--upsell-blue) 0%, var(--upsell-blue-glow) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.upsell-hero { isolation: isolate; }
+.upsell-grid {
+  background-image: linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 65% 70% at 50% 25%, black 15%, transparent 78%);
 }
 
-@utility upsell-gradient-blue {
-  background: linear-gradient(135deg, var(--upsell-blue) 0%, var(--upsell-blue-glow) 100%);
-}
+.upsell-brain-core { animation: upsell-float 5s ease-in-out infinite; box-shadow: 0 0 90px color-mix(in oklab, var(--upsell-blue) 16%, transparent), inset 0 0 60px color-mix(in oklab, var(--upsell-blue) 8%, transparent); }
+.upsell-brain-core::before, .upsell-brain-core::after { content: ""; position: absolute; inset: -20px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--upsell-blue) 18%, transparent); animation: upsell-pulse 3.5s ease-out infinite; }
+.upsell-brain-core::after { inset: -44px; animation-delay: 1.2s; }
 
-@utility upsell-glow-gold {
-  box-shadow: 0 0 40px -10px color-mix(in oklab, var(--upsell-gold) 35%, transparent);
-}
+.upsell-panel, .upsell-product-card { background: linear-gradient(145deg, oklch(1 0 0 / 6%), oklch(1 0 0 / 2%)); box-shadow: inset 0 1px 0 oklch(1 0 0 / 5%); }
+.upsell-panel { transition: transform .35s ease, border-color .35s ease, background .35s ease; }
+.upsell-panel:hover { transform: translateY(-4px); border-color: color-mix(in oklab, var(--upsell-blue) 35%, transparent); background: linear-gradient(145deg, oklch(1 0 0 / 8%), oklch(1 0 0 / 3%)); }
+.upsell-product-card { transition: transform .35s ease; }
+.upsell-product-card:hover { transform: translateY(-7px); }
 
-@utility upsell-glow-blue {
-  box-shadow: 0 0 40px -10px color-mix(in oklab, var(--upsell-blue) 35%, transparent);
-}
+.upsell-cta { position: relative; overflow: hidden; background: linear-gradient(100deg, #16a34a, #22c55e 50%, #16a34a); box-shadow: 0 16px 45px -18px rgb(34 197 94 / 70%), inset 0 1px 0 rgb(255 255 255 / 25%); transition: transform .25s ease, box-shadow .25s ease; }
+.upsell-cta::after { content: ""; position: absolute; top: -40%; bottom: -40%; left: -30%; width: 22%; transform: skewX(-20deg); background: rgb(255 255 255 / 25%); animation: upsell-shine 3.8s ease-in-out infinite; }
+.upsell-cta:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 20px 55px -18px rgb(34 197 94 / 85%), inset 0 1px 0 rgb(255 255 255 / 25%); }
 
-@utility upsell-text-gradient-gold {
-  background: linear-gradient(135deg, var(--upsell-gold) 0%, var(--upsell-gold-light) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+.upsell-marquee-mask { mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent); }
+.upsell-marquee { animation: upsell-marquee 30s linear infinite; }
+.upsell-marquee-reverse { animation: upsell-marquee-reverse 38s linear infinite; }
+.upsell-marquee:hover, .upsell-marquee-reverse:hover { animation-play-state: paused; }
 
-@utility upsell-text-gradient-blue {
-  background: linear-gradient(135deg, var(--upsell-blue) 0%, var(--upsell-blue-glow) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@keyframes upsell-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes upsell-marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@keyframes upsell-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes upsell-pulse { 0% { transform: scale(.86); opacity: .7; } 70%, 100% { transform: scale(1.05); opacity: 0; } }
+@keyframes upsell-shine { 0%, 30% { left: -30%; } 65%, 100% { left: 125%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .upsell-marquee, .upsell-marquee-reverse, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; }
 }
