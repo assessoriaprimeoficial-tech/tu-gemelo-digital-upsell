@@ -31,35 +31,7 @@ const produtoCovers = [
   elEspejoDigitalCover,
 ];
 
-const HOTMART_SCRIPT_SRC = "https://checkout.hotmart.com/lib/hotmart-checkout-elements.js";
-const HOTMART_TARGET_ID = "hotmart-sales-funnel";
-
-function HotmartSalesFunnel() {
-  useEffect(() => {
-    let cancelled = false;
-    const mount = () => {
-      if (cancelled) return;
-      const w = window as unknown as { checkoutElements?: { init: (k: string) => { mount: (s: string) => void } } };
-      const el = document.getElementById(HOTMART_TARGET_ID);
-      if (!w.checkoutElements || !el || el.dataset["mounted"] === "true") return;
-      el.dataset["mounted"] = "true";
-      w.checkoutElements.init("salesFunnel").mount(`#${HOTMART_TARGET_ID}`);
-    };
-    const existing = document.querySelector<HTMLScriptElement>(`script[src="${HOTMART_SCRIPT_SRC}"]`);
-    if (existing) {
-      if ((window as unknown as { checkoutElements?: unknown }).checkoutElements) mount();
-      else existing.addEventListener("load", mount, { once: true });
-      return () => { cancelled = true; existing.removeEventListener("load", mount); };
-    }
-    const script = document.createElement("script");
-    script.src = HOTMART_SCRIPT_SRC;
-    script.async = true;
-    script.addEventListener("load", mount, { once: true });
-    document.body.appendChild(script);
-    return () => { cancelled = true; script.removeEventListener("load", mount); };
-  }, []);
-  return <div id={HOTMART_TARGET_ID} className="mx-auto w-full max-w-md" />;
-}
+const depoimentos = [1, 2, 3, 4, 5, 6];
 
 const problemas = [
   "Cada conversa começa do zero.",
