@@ -173,7 +173,7 @@
 .upsell-cta::after { content: ""; position: absolute; top: -40%; bottom: -40%; left: -30%; width: 22%; transform: skewX(-20deg); background: rgb(255 255 255 / 25%); animation: upsell-shine 3.8s ease-in-out infinite; }
 .upsell-cta:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 20px 55px -18px rgb(34 197 94 / 85%), inset 0 1px 0 rgb(255 255 255 / 25%); }
 
-.upsell-marquee-mask { mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent); }
+.upsell-marquee-mask { overflow: hidden; }
 .upsell-marquee { animation: upsell-marquee 30s linear infinite; }
 .upsell-marquee-reverse { animation: upsell-marquee-reverse 38s linear infinite; }
 .upsell-marquee, .upsell-marquee-reverse { animation-play-state: running !important; }
