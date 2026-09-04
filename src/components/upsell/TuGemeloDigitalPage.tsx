@@ -8,12 +8,10 @@ import {
   CircleCheck,
   Eye,
   Gauge,
-  Image as ImageIcon,
   Layers3,
   Lightbulb,
   LockKeyhole,
   MessageSquareText,
-  Quote,
   ShieldCheck,
   Sparkles,
   Target,
@@ -26,9 +24,15 @@ import tuMenteEnGPTCover from "@/assets/tu-mente-en-gpt-cover-v2.png.asset.json"
 import tuSegundoCerebroCover from "@/assets/tu-segundo-cerebro-cover-v2.png.asset.json";
 import tuGemeloDigitalCover from "@/assets/tu-gemelo-digital-cover-v2.png.asset.json";
 import elEspejoDigitalCover from "@/assets/el-espejo-digital-cover-v2.png.asset.json";
+import depoimento10 from "@/assets/depoimento-10.png.asset.json";
+import depoimento11 from "@/assets/depoimento-11.png.asset.json";
+import depoimento12 from "@/assets/depoimento-12.png.asset.json";
+import depoimento13 from "@/assets/depoimento-13.png.asset.json";
+import depoimento14 from "@/assets/depoimento-14.png.asset.json";
+import depoimento15 from "@/assets/depoimento-15.png.asset.json";
 
 const produtoCovers = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
-const depoimentos = [1, 2, 3, 4, 5, 6];
+const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
 const problemas = [
   "Cada conversa começa do zero.",
   "Você precisa explicar várias vezes quem é e o que quer.",
