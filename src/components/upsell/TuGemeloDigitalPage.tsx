@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -30,6 +30,7 @@ import depoimento12 from "@/assets/depoimento-12.png.asset.json";
 import depoimento13 from "@/assets/depoimento-13.png.asset.json";
 import depoimento14 from "@/assets/depoimento-14.png.asset.json";
 import depoimento15 from "@/assets/depoimento-15.png.asset.json";
+import comboCover from "@/assets/combo-mente-expandida.png.asset.json";
 
 const produtoCovers = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
 const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
