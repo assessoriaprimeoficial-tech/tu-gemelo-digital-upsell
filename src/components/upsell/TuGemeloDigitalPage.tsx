@@ -78,7 +78,7 @@ function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) {
   return <div className="upsell-product-card w-[220px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 p-2 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} loading="lazy" className="h-auto w-full rounded-[18px] object-contain" /></div>;
 }
 function DepoimentoCard({ imagem, index }: { imagem: { url: string }; index: number }) {
-  return <div className="upsell-product-card w-[240px] shrink-0 overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.04] p-1.5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)] sm:w-[300px]"><img src={imagem.url} alt={`Depoimento de cliente ${index + 1}`} loading="lazy" className="h-auto w-full rounded-[14px] object-contain" /></div>;
+  return <div className="upsell-product-card w-[240px] shrink-0 overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.04] p-1.5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)] sm:w-[300px]"><img src={imagem.url} alt={`Depoimento de cliente ${index + 1}`} className="h-auto w-full rounded-[14px] object-contain" /></div>;
 }
 export function TuGemeloDigitalPage() {
   return <main className="overflow-hidden bg-upsell-bg text-upsell-text selection:bg-upsell-blue selection:text-white">
