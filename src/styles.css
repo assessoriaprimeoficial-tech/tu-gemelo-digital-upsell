@@ -55,6 +55,13 @@
   --color-upsell-text-muted: var(--upsell-text-muted);
   --color-upsell-success: var(--upsell-success);
   --color-upsell-success-foreground: var(--upsell-success-foreground);
+  --color-upsell-light: var(--upsell-light);
+  --color-upsell-light-alt: var(--upsell-light-alt);
+  --color-upsell-light-surface: var(--upsell-light-surface);
+  --color-upsell-light-border: var(--upsell-light-border);
+  --color-upsell-light-text: var(--upsell-light-text);
+  --color-upsell-light-muted: var(--upsell-light-muted);
+  --color-upsell-light-blue: var(--upsell-light-blue);
 }
 
 :root {
