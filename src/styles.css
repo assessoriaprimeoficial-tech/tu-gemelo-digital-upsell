@@ -108,6 +108,13 @@
   --upsell-text-muted: oklch(0.68 0.035 260);
   --upsell-success: oklch(0.72 0.18 145);
   --upsell-success-foreground: oklch(0.99 0.005 145);
+  --upsell-light: oklch(0.965 0.015 245);
+  --upsell-light-alt: oklch(0.99 0.006 250);
+  --upsell-light-surface: oklch(1 0 0);
+  --upsell-light-border: oklch(0.87 0.02 250);
+  --upsell-light-text: oklch(0.24 0.05 262);
+  --upsell-light-muted: oklch(0.48 0.04 260);
+  --upsell-light-blue: oklch(0.52 0.19 250);
 }
 
 .dark {
