@@ -80,7 +80,7 @@ function CTA({ children = "QUERO EXPANDIR MINHA MENTE COM IA" }: { children?: Re
   return <a href="#oferta" className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-3 rounded-2xl px-6 py-5 text-center text-sm font-black tracking-wide text-white uppercase sm:text-base">{children}<ArrowRight className="h-5 w-5 shrink-0" /></a>;
 }
 function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) {
-  return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} loading="lazy" className="h-auto w-full rounded-[18px] object-contain" /></div>;
+  return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} className="h-auto w-full rounded-[18px] object-contain" /></div>;
 }
 function DepoimentoCard({ imagem, index }: { imagem: { url: string }; index: number }) {
   return <div className="w-[240px] shrink-0 overflow-hidden rounded-[20px] p-1 sm:w-[300px]"><img src={imagem.url} alt={`Depoimento de cliente ${index + 1}`} className="h-auto w-full rounded-[14px] object-contain" /></div>;
