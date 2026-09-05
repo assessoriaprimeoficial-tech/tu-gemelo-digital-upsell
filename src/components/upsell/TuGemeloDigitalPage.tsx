@@ -43,6 +43,48 @@ const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, dep
 
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUIA PRINCIPAL + BÔNUS GRÁTIS", "PAGAMENTO ÚNICO", "ACESSO IMEDIATO", "GARANTIA DE 7 DIAS", "SUA IA, DO SEU JEITO"];
 
+const typewriterWords = ["CRIAR.", "APRENDER.", "PRODUZIR.", "CONQUISTAR."];
+
+function TypewriterWord() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charCount, setCharCount] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const word = typewriterWords[wordIndex];
+    let delay: number;
+    if (!deleting && charCount < word.length) delay = 65;
+    else if (!deleting && charCount === word.length) delay = 1100;
+    else if (deleting && charCount > 0) delay = 35;
+    else delay = 250;
+
+    const timer = setTimeout(() => {
+      if (!deleting) {
+        if (charCount < word.length) setCharCount(charCount + 1);
+        else setDeleting(true);
+      } else {
+        if (charCount > 0) setCharCount(charCount - 1);
+        else {
+          setDeleting(false);
+          setWordIndex((wordIndex + 1) % typewriterWords.length);
+        }
+      }
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [charCount, deleting, wordIndex]);
+
+  return (
+    <span className="upsell-text-gradient-gold relative inline-flex items-baseline" aria-live="polite">
+      <span className="invisible" aria-hidden="true">CONQUISTAR.</span>
+      <span className="absolute left-0 top-0 whitespace-nowrap" aria-hidden="true">
+        {typewriterWords[wordIndex].slice(0, charCount)}
+        <span className="ml-1 inline-block h-[0.85em] w-[3px] animate-pulse bg-upsell-gold align-baseline" />
+      </span>
+      <span className="sr-only">{typewriterWords[wordIndex]}</span>
+    </span>
+  );
+}
+
 const problemas = [
   "Você abre o chat e começa do zero. Todos os dias. Em toda conversa.",
   "Perde minutos (e energia) explicando de novo quem você é, o que faz e o que quer conquistar.",
