@@ -76,7 +76,7 @@ function TypewriterWord() {
   return (
     <span className="relative inline-flex items-baseline" aria-live="polite">
       <span className="opacity-0" aria-hidden="true">CONQUISTAR.</span>
-      <span className="upsell-text-gradient-gold absolute left-0 top-0 whitespace-nowrap" aria-hidden="true">
+      <span className="upsell-text-gradient-gold absolute left-1/2 top-0 -translate-x-1/2 whitespace-nowrap" aria-hidden="true">
         {typewriterWords[wordIndex]!.slice(0, charCount)}
         <span className="ml-1 inline-block h-[0.85em] w-[3px] animate-pulse bg-upsell-gold align-baseline" />
       </span>
