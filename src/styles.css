@@ -153,7 +153,10 @@
 @utility upsell-text-gradient-blue { background: linear-gradient(135deg, var(--upsell-blue) 0%, var(--upsell-blue-glow) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 .upsell-hero { isolation: isolate; }
-.upsell-font { font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-feature-settings: "ss01", "cv01"; letter-spacing: -0.01em; }
+.upsell-font { font-family: "Chakra Petch", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: 0em; }
+.upsell-font h1, .upsell-font h2, .upsell-font h3 { font-family: "Orbitron", "Chakra Petch", ui-sans-serif, sans-serif; letter-spacing: 0.01em; }
+.upsell-eyebrow, .upsell-cta { font-family: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace; }
+.upsell-matrix { -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%); }
 .upsell-grid {
   background-image: linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
   background-size: 52px 52px;
