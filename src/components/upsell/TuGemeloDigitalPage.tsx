@@ -51,7 +51,7 @@ function TypewriterWord() {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const word = typewriterWords[wordIndex];
+    const word = typewriterWords[wordIndex]!;
     let delay: number;
     if (!deleting && charCount < word.length) delay = 65;
     else if (!deleting && charCount === word.length) delay = 1100;
@@ -77,7 +77,7 @@ function TypewriterWord() {
     <span className="upsell-text-gradient-gold relative inline-flex items-baseline" aria-live="polite">
       <span className="invisible" aria-hidden="true">CONQUISTAR.</span>
       <span className="absolute left-0 top-0 whitespace-nowrap" aria-hidden="true">
-        {typewriterWords[wordIndex].slice(0, charCount)}
+        {typewriterWords[wordIndex]!.slice(0, charCount)}
         <span className="ml-1 inline-block h-[0.85em] w-[3px] animate-pulse bg-upsell-gold align-baseline" />
       </span>
       <span className="sr-only">{typewriterWords[wordIndex]}</span>
