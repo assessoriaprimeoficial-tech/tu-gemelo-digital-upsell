@@ -53,10 +53,10 @@ function TypewriterWord() {
   useEffect(() => {
     const word = typewriterWords[wordIndex]!;
     let delay: number;
-    if (!deleting && charCount < word.length) delay = 65;
-    else if (!deleting && charCount === word.length) delay = 1100;
-    else if (deleting && charCount > 0) delay = 35;
-    else delay = 250;
+    if (!deleting && charCount < word.length) delay = 110;
+    else if (!deleting && charCount === word.length) delay = 1700;
+    else if (deleting && charCount > 0) delay = 60;
+    else delay = 350;
 
     const timer = setTimeout(() => {
       if (!deleting) {
