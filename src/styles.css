@@ -55,6 +55,13 @@
   --color-upsell-text-muted: var(--upsell-text-muted);
   --color-upsell-success: var(--upsell-success);
   --color-upsell-success-foreground: var(--upsell-success-foreground);
+  --color-upsell-light: var(--upsell-light);
+  --color-upsell-light-alt: var(--upsell-light-alt);
+  --color-upsell-light-surface: var(--upsell-light-surface);
+  --color-upsell-light-border: var(--upsell-light-border);
+  --color-upsell-light-text: var(--upsell-light-text);
+  --color-upsell-light-muted: var(--upsell-light-muted);
+  --color-upsell-light-blue: var(--upsell-light-blue);
 }
 
 :root {
@@ -101,6 +108,13 @@
   --upsell-text-muted: oklch(0.68 0.035 260);
   --upsell-success: oklch(0.72 0.18 145);
   --upsell-success-foreground: oklch(0.99 0.005 145);
+  --upsell-light: oklch(0.965 0.015 245);
+  --upsell-light-alt: oklch(0.99 0.006 250);
+  --upsell-light-surface: oklch(1 0 0);
+  --upsell-light-border: oklch(0.87 0.02 250);
+  --upsell-light-text: oklch(0.24 0.05 262);
+  --upsell-light-muted: oklch(0.48 0.04 260);
+  --upsell-light-blue: oklch(0.52 0.19 250);
 }
 
 .dark {
@@ -139,6 +153,10 @@
 @utility upsell-text-gradient-blue { background: linear-gradient(135deg, var(--upsell-blue) 0%, var(--upsell-blue-glow) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 .upsell-hero { isolation: isolate; }
+.upsell-font { font-family: "Chakra Petch", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing: 0em; }
+.upsell-font h1, .upsell-font h2, .upsell-font h3 { font-family: "Orbitron", "Chakra Petch", ui-sans-serif, sans-serif; letter-spacing: 0.01em; }
+.upsell-eyebrow, .upsell-cta { font-family: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace; }
+.upsell-matrix { -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%); }
 .upsell-grid {
   background-image: linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
   background-size: 52px 52px;
@@ -159,7 +177,7 @@
 .upsell-cta::after { content: ""; position: absolute; top: -40%; bottom: -40%; left: -30%; width: 22%; transform: skewX(-20deg); background: rgb(255 255 255 / 25%); animation: upsell-shine 3.8s ease-in-out infinite; }
 .upsell-cta:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 20px 55px -18px rgb(34 197 94 / 85%), inset 0 1px 0 rgb(255 255 255 / 25%); }
 
-.upsell-marquee-mask { mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent); }
+.upsell-marquee-mask { overflow: hidden; }
 .upsell-marquee { animation: upsell-marquee 30s linear infinite; }
 .upsell-marquee-reverse { animation: upsell-marquee-reverse 38s linear infinite; }
 .upsell-marquee, .upsell-marquee-reverse { animation-play-state: running !important; }
