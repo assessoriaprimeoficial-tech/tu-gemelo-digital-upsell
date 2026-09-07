@@ -44,7 +44,6 @@ import ofertaSegundoCerebro from "@/assets/oferta-tu-segundo-cerebro.png.asset.j
 import ofertaGemeloDigital from "@/assets/oferta-tu-gemelo-digital.png.asset.json";
 import ofertaComboCompleto from "@/assets/oferta-combo-completo.png.asset.json";
 
-const produtoCovers = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
 const pilarImagens = [
   carrosselCerebroEscritorio,
   tuGemeloDigitalCover,
