@@ -36,9 +36,29 @@ import pilarMenteLifestyle from "@/assets/pilar-mente-lifestyle.png.asset.json";
 import pilarCerebroLifestyle from "@/assets/pilar-cerebro-lifestyle.png.asset.json";
 import pilarGemeloLifestyle from "@/assets/pilar-gemelo-lifestyle.png.asset.json";
 import heroCover from "@/assets/hero-mente-en-gpt-cena.png.asset.json";
+import carrosselGemeloCafe from "@/assets/carrossel-gemelo-cafe.png.asset.json";
+import carrosselMenteTrem from "@/assets/carrossel-mente-trem.png.asset.json";
+import carrosselCerebroEscritorio from "@/assets/carrossel-cerebro-escritorio.png.asset.json";
+import carrosselMenteLaptop from "@/assets/carrossel-mente-laptop.png.asset.json";
+import ofertaSegundoCerebro from "@/assets/oferta-tu-segundo-cerebro.png.asset.json";
+import ofertaGemeloDigital from "@/assets/oferta-tu-gemelo-digital.png.asset.json";
+import ofertaComboCompleto from "@/assets/oferta-combo-completo.png.asset.json";
 
 const produtoCovers = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
-const pilarImagens = [...produtoCovers, pilarMenteLifestyle, pilarCerebroLifestyle, pilarGemeloLifestyle, heroCover];
+const pilarImagens = [
+  carrosselCerebroEscritorio,
+  tuGemeloDigitalCover,
+  pilarMenteLifestyle,
+  carrosselMenteTrem,
+  elEspejoDigitalCover,
+  pilarGemeloLifestyle,
+  carrosselGemeloCafe,
+  tuMenteEnGPTCover,
+  heroCover,
+  carrosselMenteLaptop,
+  tuSegundoCerebroCover,
+  pilarCerebroLifestyle,
+];
 const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
 
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUIA PRINCIPAL + BÔNUS GRÁTIS", "PAGAMENTO ÚNICO", "ACESSO IMEDIATO", "GARANTIA DE 7 DIAS", "SUA IA, DO SEU JEITO"];
