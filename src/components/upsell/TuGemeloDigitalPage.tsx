@@ -164,8 +164,8 @@ function MatrixRain() {
 function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: string; titulo: ReactNode; light?: boolean; children?: ReactNode }) {
   return <div className="mx-auto max-w-3xl text-center"><div className={`upsell-eyebrow mb-4 text-xs tracking-[0.28em] uppercase ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`}>{etiqueta}</div><h2 className={`text-3xl font-bold tracking-[-0.01em] sm:text-4xl md:text-5xl ${light ? "text-upsell-light-text" : "text-white"}`}>{titulo}</h2>{children ? <div className={`mt-5 text-base leading-7 sm:text-lg ${light ? "text-upsell-light-muted" : "text-upsell-text-muted"}`}>{children}</div> : null}</div>;
 }
-function CTA({ children = "SIM, QUERO MINHA INTELIGÊNCIA DIGITAL" }: { children?: ReactNode }) {
-  return <a href="#oferta" className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-5 text-center text-xs tracking-wide text-white uppercase sm:gap-3 sm:px-6 sm:text-base">{children}<ArrowRight className="h-5 w-5 shrink-0" /></a>;
+function CTA({ children = "QUERO CRIAR MINHA IA PERSONALIZADA", href = "#oferta" }: { children?: ReactNode; href?: string }) {
+  return <a href={href} className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-5 text-center text-xs tracking-wide text-white uppercase sm:gap-3 sm:px-6 sm:text-base">{children}<ArrowRight className="h-5 w-5 shrink-0" /></a>;
 }
 function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) {
   return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} className="h-auto w-full rounded-[18px] object-contain" /></div>;
