@@ -35,7 +35,7 @@ import ofertaEspejo from "@/assets/oferta-el-espejo-digital.png.asset.json";
 import pilarMenteLifestyle from "@/assets/pilar-mente-lifestyle.png.asset.json";
 import pilarCerebroLifestyle from "@/assets/pilar-cerebro-lifestyle.png.asset.json";
 import pilarGemeloLifestyle from "@/assets/pilar-gemelo-lifestyle.png.asset.json";
-import heroCover from "@/assets/hero-tu-mente-en-gpt-v2.png.asset.json";
+import heroCover from "@/assets/hero-mente-en-gpt-cena.png.asset.json";
 
 const produtoCovers = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
 const pilarImagens = [...produtoCovers, pilarMenteLifestyle, pilarCerebroLifestyle, pilarGemeloLifestyle];
