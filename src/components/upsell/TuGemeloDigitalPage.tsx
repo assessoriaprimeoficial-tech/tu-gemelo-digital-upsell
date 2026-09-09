@@ -13,15 +13,14 @@ import depoimento14 from "@/assets/depoimento-14.png.asset.json";
 import depoimento15 from "@/assets/depoimento-15.png.asset.json";
 import heroCover from "@/assets/hero-mente-en-gpt-cena.png.asset.json";
 import ofertaComboCompleto from "@/assets/oferta-combo-completo.png.asset.json";
-import pilarNovo32 from "@/assets/pilar-novo-32.png.asset.json";
-import pilarNovo33 from "@/assets/pilar-novo-33.png.asset.json";
-import pilarNovo34 from "@/assets/pilar-novo-34.png.asset.json";
-import pilarNovo35 from "@/assets/pilar-novo-35.png.asset.json";
-import pilarNovo36 from "@/assets/pilar-novo-36.png.asset.json";
-import pilarNovo37 from "@/assets/pilar-novo-37.png.asset.json";
-import pilarNovo38 from "@/assets/pilar-novo-38.png.asset.json";
+import metodoNovo39 from "@/assets/metodo-novo-39.png.asset.json";
+import metodoNovo40 from "@/assets/metodo-novo-40.png.asset.json";
+import metodoNovo41 from "@/assets/metodo-novo-41.png.asset.json";
+import metodoNovo42 from "@/assets/metodo-novo-42.png.asset.json";
+import metodoNovo43 from "@/assets/metodo-novo-43.png.asset.json";
+import metodoNovo44 from "@/assets/metodo-novo-44.png.asset.json";
 
-const pilarImagens = [pilarNovo33, pilarNovo36, pilarNovo32, pilarNovo38, pilarNovo35, pilarNovo37, pilarNovo34];
+const pilarImagens = [metodoNovo39, metodoNovo40, metodoNovo41, metodoNovo42, metodoNovo43, metodoNovo44];
 const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUIA PRINCIPAL + BÔNUS GRÁTIS", "PAGAMENTO ÚNICO", "ACESSO IMEDIATO", "GARANTIA DE 7 DIAS", "SUA IA, DO SEU JEITO"];
 const typewriterWords = ["CRIAR.", "APRENDER.", "PRODUZIR.", "CONQUISTAR."];
@@ -94,7 +93,7 @@ function MatrixRain() {
 }
 function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: string; titulo: ReactNode; light?: boolean; children?: ReactNode }) { return <div className="mx-auto max-w-3xl text-center"><div className={`upsell-eyebrow mb-4 text-xs tracking-[0.28em] uppercase ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`}>{etiqueta}</div><h2 className={`text-3xl font-bold tracking-[-0.01em] sm:text-4xl md:text-5xl ${light ? "text-upsell-light-text" : "text-white"}`}>{titulo}</h2>{children ? <div className={`mt-5 text-base leading-7 sm:text-lg ${light ? "text-upsell-light-muted" : "text-upsell-text-muted"}`}>{children}</div> : null}</div>; }
 function CTA({ children = "QUERO CRIAR MINHA IA PERSONALIZADA", href = "#oferta" }: { children?: ReactNode; href?: string }) { return <a href={href} className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-5 text-center text-xs tracking-wide text-white uppercase sm:gap-3 sm:px-6 sm:text-base">{children}<ArrowRight className="h-5 w-5 shrink-0" /></a>; }
-function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) { return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} className="h-auto w-full rounded-[18px] object-contain" /></div>; }
+function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) { return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} className="h-[240px] w-full rounded-[18px] object-cover sm:h-[290px]" /></div>; }
 function DepoimentoCard({ imagem, index }: { imagem: { url: string }; index: number }) { return <div className="w-[240px] shrink-0 overflow-hidden rounded-[20px] p-1 sm:w-[300px]"><img src={imagem.url} alt={`Depoimento de cliente ${index + 1}`} className="h-auto w-full rounded-[14px] object-contain" /></div>; }
 const compradores = ["Mariana S.", "Carlos P.", "Fernanda L.", "João M.", "Ana Paula R.", "Ricardo T.", "Camila V.", "Diego A.", "Patrícia G.", "Lucas H.", "Beatriz C.", "Thiago N."];
 function NotificacoesVendas() { const [atual, setAtual] = useState(0); const [visivel, setVisivel] = useState(false); useEffect(() => { let ciclo: ReturnType<typeof setTimeout> | undefined; const timeouts: ReturnType<typeof setTimeout>[] = []; const mostrar = () => { setAtual(a => (a + 1) % compradores.length); setVisivel(true); timeouts.push(setTimeout(() => setVisivel(false), 4000)); ciclo = setTimeout(mostrar, 28000); }; const inicial = setTimeout(mostrar, 12000); return () => { clearTimeout(inicial); if (ciclo) clearTimeout(ciclo); timeouts.forEach(clearTimeout); }; }, []); return <div className={`fixed bottom-4 left-4 z-50 flex max-w-[290px] items-center gap-3 rounded-2xl bg-[#15803d] px-4 py-3 shadow-[0_18px_50px_-20px_rgba(34,197,94,0.65)] transition-opacity duration-200 ${visivel ? "opacity-100" : "opacity-0"}`} role="status"><span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/15 text-white"><BadgeCheck className="h-4 w-4" /></span><p className="text-xs leading-4 text-white"><span className="font-bold">{compradores[atual]}</span> adquiriu o <span className="font-semibold">Combo Método Mente Expandida</span></p></div>; }
