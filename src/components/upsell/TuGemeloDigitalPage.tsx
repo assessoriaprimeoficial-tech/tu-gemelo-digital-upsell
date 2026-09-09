@@ -20,7 +20,7 @@ import metodoNovo42 from "@/assets/metodo-novo-42.png.asset.json";
 import metodoNovo43 from "@/assets/metodo-novo-43.png.asset.json";
 import metodoNovo44 from "@/assets/metodo-novo-44.png.asset.json";
 
-const pilarImagens = [pilarNovo33, pilarNovo36, pilarNovo32, pilarNovo38, pilarNovo35, pilarNovo37, pilarNovo34];
+const pilarImagens = [metodoNovo39, metodoNovo40, metodoNovo41, metodoNovo42, metodoNovo43, metodoNovo44];
 const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUIA PRINCIPAL + BÔNUS GRÁTIS", "PAGAMENTO ÚNICO", "ACESSO IMEDIATO", "GARANTIA DE 7 DIAS", "SUA IA, DO SEU JEITO"];
 const typewriterWords = ["CRIAR.", "APRENDER.", "PRODUZIR.", "CONQUISTAR."];
