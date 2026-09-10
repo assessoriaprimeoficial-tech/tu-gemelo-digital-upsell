@@ -31,7 +31,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -157,45 +156,24 @@
 .upsell-font h1, .upsell-font h2, .upsell-font h3 { font-family: "Orbitron", "Chakra Petch", ui-sans-serif, sans-serif; letter-spacing: 0.01em; }
 .upsell-eyebrow, .upsell-cta { font-family: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace; }
 .upsell-matrix { -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%); }
-.upsell-grid {
-  background-image: linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
-  background-size: 52px 52px;
-  mask-image: radial-gradient(ellipse 65% 70% at 50% 25%, black 15%, transparent 78%);
-}
-
+.upsell-grid { background-image: linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px); background-size: 52px 52px; mask-image: radial-gradient(ellipse 65% 70% at 50% 25%, black 15%, transparent 78%); }
 .upsell-brain-core { animation: upsell-float 5s ease-in-out infinite; box-shadow: 0 0 90px color-mix(in oklab, var(--upsell-blue) 16%, transparent), inset 0 0 60px color-mix(in oklab, var(--upsell-blue) 8%, transparent); }
 .upsell-brain-core::before, .upsell-brain-core::after { content: ""; position: absolute; inset: -20px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--upsell-blue) 18%, transparent); animation: upsell-pulse 3.5s ease-out infinite; }
 .upsell-brain-core::after { inset: -44px; animation-delay: 1.2s; }
-
 .upsell-panel, .upsell-product-card { background: linear-gradient(145deg, oklch(1 0 0 / 6%), oklch(1 0 0 / 2%)); box-shadow: inset 0 1px 0 oklch(1 0 0 / 5%); }
 .upsell-panel { transition: transform .35s ease, border-color .35s ease, background .35s ease; }
 .upsell-panel:hover { transform: translateY(-4px); border-color: color-mix(in oklab, var(--upsell-blue) 35%, transparent); background: linear-gradient(145deg, oklch(1 0 0 / 8%), oklch(1 0 0 / 3%)); }
 .upsell-product-card { transition: transform .35s ease; }
 .upsell-product-card:hover { transform: translateY(-7px); }
-
 .upsell-cta { position: relative; overflow: hidden; background: linear-gradient(100deg, #16a34a, #22c55e 50%, #16a34a); box-shadow: 0 16px 45px -18px rgb(34 197 94 / 70%), inset 0 1px 0 rgb(255 255 255 / 25%); transition: transform .25s ease, box-shadow .25s ease; }
 .upsell-cta::after { content: ""; position: absolute; top: -40%; bottom: -40%; left: -30%; width: 22%; transform: skewX(-20deg); background: rgb(255 255 255 / 25%); animation: upsell-shine 3.8s ease-in-out infinite; }
 .upsell-cta:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 20px 55px -18px rgb(34 197 94 / 85%), inset 0 1px 0 rgb(255 255 255 / 25%); }
 
-/* A oferta fica limpa no mobile sem os selos que estavam quebrando o layout. */
-#combo .text-upsell-success {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  white-space: normal !important;
-  overflow-wrap: normal;
-  word-break: normal;
-  line-height: 1.08;
-  text-align: center;
-  font-size: clamp(1.45rem, 6.5vw, 3.5rem) !important;
-}
+#combo .text-upsell-success { display: block; width: 100%; max-width: 100%; min-width: 0; white-space: normal !important; overflow-wrap: normal; word-break: normal; line-height: 1.08; text-align: center; font-size: clamp(1.45rem, 6.5vw, 3.5rem) !important; }
+#combo .mt-6.flex.flex-wrap { display: none !important; }
 
 @media (min-width: 640px) {
-  #combo .text-upsell-success {
-    font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
-    letter-spacing: -0.02em;
-  }
+  #combo .text-upsell-success { font-size: clamp(2.5rem, 5vw, 4.5rem) !important; letter-spacing: -0.02em; }
 }
 
 .upsell-marquee-mask { overflow: hidden; }
@@ -203,14 +181,9 @@
 .upsell-marquee-reverse { animation: upsell-marquee-reverse 38s linear infinite; }
 .upsell-marquee, .upsell-marquee-reverse { animation-play-state: running !important; }
 .upsell-marquee-slow { animation: upsell-marquee 45s linear infinite; }
-
 @keyframes upsell-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes upsell-marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @keyframes upsell-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes upsell-pulse { 0% { transform: scale(.86); opacity: .7; } 70%, 100% { transform: scale(1.05); opacity: 0; } }
 @keyframes upsell-shine { 0%, 30% { left: -30%; } 65%, 100% { left: 125%; } }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .upsell-marquee, .upsell-marquee-reverse, .upsell-marquee-slow, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .upsell-marquee, .upsell-marquee-reverse, .upsell-marquee-slow, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; } }
