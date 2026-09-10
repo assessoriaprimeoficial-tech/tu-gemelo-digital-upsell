@@ -181,6 +181,11 @@
   #combo .text-upsell-success { font-size: clamp(2.5rem, 5vw, 4.5rem) !important; letter-spacing: -0.02em; }
 }
 
+/* Remove os três selos de confiança da oferta: estavam quebrando visualmente no mobile. */
+#combo .mt-6.flex.flex-wrap,
+#combo .mt-6.flex.flex-wrap.items-center,
+#combo .mt-6.flex.flex-wrap.items-center.justify-center { display: none !important; }
+
 .upsell-marquee-mask { overflow: hidden; }
 .upsell-marquee { animation: upsell-marquee 30s linear infinite; }
 .upsell-marquee-reverse { animation: upsell-marquee-reverse 38s linear infinite; }
