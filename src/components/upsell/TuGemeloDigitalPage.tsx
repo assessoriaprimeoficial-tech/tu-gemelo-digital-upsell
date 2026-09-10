@@ -11,7 +11,7 @@ import depoimento12 from "@/assets/depoimento-12.png.asset.json";
 import depoimento13 from "@/assets/depoimento-13.png.asset.json";
 import depoimento14 from "@/assets/depoimento-14.png.asset.json";
 import depoimento15 from "@/assets/depoimento-15.png.asset.json";
-import comboCover from "@/assets/combo-mente-expandida-novo.png.asset.json";
+import comboCover from "@/assets/combo-mente-expandida-v3.png.asset.json";
 import metodoNovo39 from "@/assets/metodo-novo-39.png.asset.json";
 import metodoNovo40 from "@/assets/metodo-novo-40.png.asset.json";
 import metodoNovo41 from "@/assets/metodo-novo-41.png.asset.json";
@@ -91,7 +91,7 @@ function MatrixRain() {
   return <canvas ref={ref} aria-hidden className="upsell-matrix pointer-events-none absolute inset-0 h-full w-full opacity-60" />;
 }
 function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: string; titulo: ReactNode; light?: boolean; children?: ReactNode }) { return <div className="mx-auto max-w-3xl text-center"><div className={`upsell-eyebrow mb-4 text-xs tracking-[0.28em] uppercase ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`}>{etiqueta}</div><h2 className={`text-3xl font-bold tracking-[-0.01em] sm:text-4xl md:text-5xl ${light ? "text-upsell-light-text" : "text-white"}`}>{titulo}</h2>{children ? <div className={`mt-5 text-base leading-7 sm:text-lg ${light ? "text-upsell-light-muted" : "text-upsell-text-muted"}`}>{children}</div> : null}</div>; }
-function CTA({ href = "#oferta" }: { children?: ReactNode; href?: string }) { return <a href={href} className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-5 text-center text-xs tracking-wide text-white uppercase sm:gap-3 sm:px-6 sm:text-base">QUERO LEVAR O COMBO MENTE EXPANDIDA<ArrowRight className="h-5 w-5 shrink-0" /></a>; }
+function CTA({ href = "#oferta", children }: { href?: string; children?: ReactNode }) { return <a href={href} className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-5 text-center text-xs tracking-wide text-white uppercase sm:gap-3 sm:px-6 sm:text-base">{children ?? "QUERO LEVAR O COMBO MENTE EXPANDIDA"}<ArrowRight className="h-5 w-5 shrink-0" /></a>; }
 function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) { return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Capa ${nome}`} className="h-[240px] w-full rounded-[18px] object-cover sm:h-[290px]" /></div>; }
 function DepoimentoCard({ imagem, index }: { imagem: { url: string }; index: number }) { return <div className="w-[240px] shrink-0 overflow-hidden rounded-[20px] p-1 sm:w-[300px]"><img src={imagem.url} alt={`Depoimento de cliente ${index + 1}`} className="h-auto w-full rounded-[14px] object-contain" /></div>; }
 
