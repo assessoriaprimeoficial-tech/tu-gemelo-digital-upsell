@@ -172,7 +172,6 @@
 
 #combo .text-upsell-success { display: block; width: 100%; max-width: 100%; min-width: 0; white-space: normal !important; overflow-wrap: normal; word-break: normal; line-height: 1.08; text-align: center; font-size: clamp(1.45rem, 6.5vw, 3.5rem) !important; }
 
-/* Botão da oferta: texto menor no mobile para caber perfeitamente dentro do botão. */
 @media (max-width: 639px) {
   #combo .upsell-cta { font-size: 0.62rem !important; letter-spacing: 0; padding-left: 0.65rem; padding-right: 0.65rem; }
 }
@@ -180,11 +179,6 @@
 @media (min-width: 640px) {
   #combo .text-upsell-success { font-size: clamp(2.5rem, 5vw, 4.5rem) !important; letter-spacing: -0.02em; }
 }
-
-/* Remove os três selos de confiança da oferta: estavam quebrando visualmente no mobile. */
-#combo .mt-6.flex.flex-wrap,
-#combo .mt-6.flex.flex-wrap.items-center,
-#combo .mt-6.flex.flex-wrap.items-center.justify-center { display: none !important; }
 
 .upsell-marquee-mask { overflow: hidden; }
 .upsell-marquee { animation: upsell-marquee 30s linear infinite; }
@@ -196,4 +190,18 @@
 @keyframes upsell-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes upsell-pulse { 0% { transform: scale(.86); opacity: .7; } 70%, 100% { transform: scale(1.05); opacity: 0; } }
 @keyframes upsell-shine { 0%, 30% { left: -30%; } 65%, 100% { left: 125%; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .upsell-marquee, .upsell-marquee-reverse, .upsell-marquee-slow, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; } }
+
+/* Carrossel visual da segunda seção: substitui a imagem única por um slider automático com os 4 guias. */
+main > section:nth-of-type(2) img {
+  content: url('/mente-expandida-carousel.svg');
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 30px 90px -30px rgb(96 165 250 / 45%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .upsell-marquee, .upsell-marquee-reverse, .upsell-marquee-slow, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; }
+}
