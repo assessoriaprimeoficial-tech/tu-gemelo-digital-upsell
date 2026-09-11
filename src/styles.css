@@ -191,17 +191,46 @@
 @keyframes upsell-pulse { 0% { transform: scale(.86); opacity: .7; } 70%, 100% { transform: scale(1.05); opacity: 0; } }
 @keyframes upsell-shine { 0%, 30% { left: -30%; } 65%, 100% { left: 125%; } }
 
-/* Carrossel visual da segunda seção: substitui a imagem única por um slider automático com os 4 guias. */
+/* Carrossel real da segunda seção: usa diretamente as quatro capas já existentes no projeto. */
 main > section:nth-of-type(2) img {
-  content: url('/mente-expandida-carousel.svg');
   display: block;
+  width: min(100%, 560px);
+  max-width: 560px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 30px 90px -30px rgb(96 165 250 / 45%);
+  object-position: center;
+  border-radius: 28px;
+  box-shadow: 0 30px 90px -30px rgb(96 165 250 / 55%);
+  animation: mente-expandida-carrossel 16s steps(1, end) infinite;
+}
+
+@keyframes mente-expandida-carrossel {
+  0%, 24.99% {
+    content: url('/__l5e/assets-v1/34da078e-32d3-45bd-bdb6-4b6d395acbec/tu-mente-en-gpt-cover-v2.png');
+  }
+  25%, 49.99% {
+    content: url('/__l5e/assets-v1/c2e984cb-71af-4858-bd24-0d41c66fc5a5/el-espejo-digital-cover-v2.png');
+  }
+  50%, 74.99% {
+    content: url('/__l5e/assets-v1/b01818ef-3de8-44c6-82d6-9a5551d8e146/tu-segundo-cerebro-cover-v2.png');
+  }
+  75%, 100% {
+    content: url('/__l5e/assets-v1/1c991b2d-f2fb-46e8-aaf7-7967ac86bf50/tu-gemelo-digital-cover-v2.png');
+  }
+}
+
+@media (max-width: 639px) {
+  main > section:nth-of-type(2) img {
+    width: min(100%, 430px);
+    max-width: 430px;
+    border-radius: 22px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .upsell-marquee, .upsell-marquee-reverse, .upsell-marquee-slow, .upsell-brain-core, .upsell-brain-core::before, .upsell-brain-core::after, .upsell-cta::after { animation: none; }
+  main > section:nth-of-type(2) img {
+    content: url('/__l5e/assets-v1/34da078e-32d3-45bd-bdb6-4b6d395acbec/tu-mente-en-gpt-cover-v2.png');
+  }
 }
